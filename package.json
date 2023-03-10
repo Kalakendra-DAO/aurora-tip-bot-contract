@@ -1,0 +1,29 @@
+{
+  "name": "aurora-tip-bot-contract",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kalakendra-DAO/aurora-tip-bot-contract.git"
+  },
+  "author": "Moganesan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kalakendra-DAO/aurora-tip-bot-contract/issues"
+  },
+  "homepage": "https://github.com/Kalakendra-DAO/aurora-tip-bot-contract#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@nomiclabs/hardhat-ethers": "^2.2.2",
+    "@openzeppelin/hardhat-upgrades": "^1.22.1",
+    "hardhat": "^2.13.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.2",
+    "@openzeppelin/contracts-upgradeable": "^4.8.2"
+  }
+}
