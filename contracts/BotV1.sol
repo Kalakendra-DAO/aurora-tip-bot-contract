@@ -7,7 +7,6 @@ contract BotV1 {
     uint256 withdrawnTokens;
     int256 usersCount;
     uint256 withdrawFee;
-    // uint256 tipFee;
     mapping(address => uint256) public balances;
     mapping(string => uint256) public unClaimedBalances;
     mapping(string => address) public wallets;
@@ -58,7 +57,6 @@ contract BotV1 {
         string memory _tUserName,
         string memory _jwtToken
     ) public {
-        // require(msg.sender == owner, "403:FORBIDDEN");
         wallets[_tUserName] = _walletAddress;
         if (unClaimedBalances[_tUserName] > 0) {
             balances[wallets[_tUserName]] += unClaimedBalances[_tUserName];
@@ -88,17 +86,6 @@ contract BotV1 {
     function getOwner() public view returns (address) {
         return owner;
     }
-
-    // function logout(address _walletAddress) public {
-    //     uint256 index;
-    //     for (uint256 i = 0; i < sessionCount; i++) {
-    //         if (Sessions[i].walletAddress == _walletAddress) {
-    //             index = i;
-    //             break;
-    //         }
-    //     }
-    //     delete Sessions[index];
-    // }
 
     function logout(string memory _tUserName) public {
         delete Sessions[_tUserName];
@@ -143,7 +130,6 @@ contract BotV1 {
         );
         require(balances[sender] >= amount, "Insufficient Funds");
         require(msg.sender == owner, "403:FORBIDDEN");
-        // uint256 fees = (amount * tipFee) / 100;
         if (receiver == address(0)) {
             balances[sender] -= amount;
             unClaimedBalances[to] += amount;
